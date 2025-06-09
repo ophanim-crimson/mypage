@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asher Jobin Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    .header {
+      background-color: #00695c;
+      color: white;
+      padding: 40px 20px;
+      transition: background-color 0.6s ease;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      width: 280px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background-color: #e0f2f1;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background-color: #00695c;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      transition: background-color 0.6s ease;
+    }
+
+    /* ---------- DARK MODE ---------- */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode .header,
+    .dark-mode .footer {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode .card {
+      background-color: #1c1c1c;
+      color: #eee;
+    }
+
+    .dark-mode .card:hover {
+      background-color: #2c2c2c;
+    }
+
+    /* ---------- PRIDE MODE ---------- */
+    body.pride-mode {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #fbc2eb, #f6d365, #fdcbf1);
+      background-size: 400% 400%;
+      animation: prideBackground 10s ease infinite;
+      color: #222;
+    }
+
+    @keyframes prideBackground {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .pride-mode .header,
+    .pride-mode .footer {
+      background: rgba(255, 255, 255, 0.8);
+      color: #333;
+    }
+
+    .pride-mode .card {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #222;
+    }
+
+    .pride-mode .card:hover {
+      background-color: #ffe082;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    
+    <img src="ajj.jpg" alt="Profile" class="profile-pic" onclick="cycleTheme()">
+    <h1>Asher Jobin</h1>
+    <p>Computer Science Student | Web Developer</p>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h3>🎓 Personal Info</h3>
+      <p><strong>Name:</strong> Asher John Jobin</p>
+      <p><strong>Age:</strong> 18</p>
+      <p><strong>Location:</strong> Kerala, India</p>
+      <p><strong>School:</strong> <a href="https://bhavansvellore.org/" target="_blank">Bhavans Newsprint Vidyalaya Velloor</a></p>
+      <p><strong>College:</strong> <a href="https://www.ajce.in" target="_blank">Amal Jyothi College of Engineering</a></p>
+    </div>
+
+    <div class="card">
+      <h3>🛠️ Skills</h3>
+      <p>HTML, CSS, JavaScript</p>
+      <p>Python & C</p>
+      <p>Git & GitHub</p>
+      <p>Responsive Design</p>
+    </div>
+
+    <div class="card">
+      <h3>💡 Soft Skills</h3>
+      <p>Teamwork</p>
+      <p>Problem Solving</p>
+      <p>Communication</p>
+      <p>Adaptability</p>
+    </div>
+
+    <div class="card">
+      <h3>📞 Contact Info</h3>
+      <p>Email: asherjohnjobin@gmail.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/asherjobin" target="_blank">asherjobin</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Asher Jobin
+  </footer>
+
+  <script>
+    let themeIndex = 0;
+    const themes = ["", "dark-mode", "pride-mode"];
+
+    function cycleTheme() {
+      themeIndex = (themeIndex + 1) % themes.length;
+      document.body.className = themes[themeIndex];
+    }
+  </script>
+</body>
+</html>
